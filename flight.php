@@ -8,13 +8,50 @@
 	echo "Departure Date: " . $_POST['departure']. "</br>";
 	echo "Return Date: " . $_POST['return']. "</br>";
 	echo "Round: " . $_POST['trip']. "</br>";
-	echo "Oneway: " . $_POST['trip']. "</br>";  
+	
+
+
+
+$host = "localhost";
+$username = "root";
+$password = "";
+$dbase = "flightdbase";
+
+
+$conn = mysqli_connect($host,$username,$password,$dbase);
+
+
+if(!$conn){
+
+echo "cannot connect to the database " . mysqli_connect_error();
+
 }
 
 else{
 
-	echo "error ";
+
+$from = $_POST['from'];
+$to = $_POST['to'];
+$departure = $_POST['departure'];
+$return = $_POST['return'];
+$trip = $_POST['trip'];
+
+
+
+
+$query = mysqli_query($conn,"INSERT INTO details (start, destination, departure, returnback, trip) VALUES('$from', '$to','$departure','$return','$trip') "); 
+	echo "</br>";
+	echo  "flight details has been successfully saved to the database! ";
+
+
+
+
 }
+
+
+
+}
+
 
 
 ?>
