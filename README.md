@@ -10,6 +10,10 @@
 
 -![](flight.png)
 
+- details of flight saved to database
+
+![](database.png)
+
 - search functionality for available hotels
 
 ![](hotels.png)
